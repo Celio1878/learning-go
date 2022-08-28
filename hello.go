@@ -3,15 +3,30 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(Hello(""))
+	fmt.Println(Hello("", "brazilian"))
 }
 
-const prefix = "Hello "
+func Hello(name string, language string) string {
 
-func Hello(name string) string {
 	if name == "" {
 		name = "Anybody"
 	}
 
-	return prefix + name
+	return salution_prefix(language) + name
+}
+
+func salution_prefix(language string) (prefix string) {
+
+	switch language {
+	case "brazilian":
+		prefix = "Ola "
+
+	case "france":
+		prefix = "Bonjour "
+
+	default:
+		prefix = "Hello "
+	}
+
+	return
 }

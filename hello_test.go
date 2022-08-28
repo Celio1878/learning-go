@@ -11,16 +11,16 @@ func TestHello(t *testing.T) {
 		}
 	}
 
-	t.Run("Should to say Hello for peoples", func(test *testing.T) {
-		result := Hello("BYS")
+	t.Run("Should to say Hello for brazilian peoples", func(test *testing.T) {
+		result := Hello("BYS", "brazilian")
 
-		const expect string = "Hello BYS"
+		const expect string = "Ola BYS"
 
 		verifyMessage(test, result, expect)
 	})
 
 	t.Run("Should to say Hello Anybody while empty", func(test *testing.T) {
-		result := Hello("")
+		result := Hello("", "english")
 
 		const expect string = "Hello Anybody"
 
@@ -31,7 +31,7 @@ func TestHello(t *testing.T) {
 
 // For tests
 /*
-	archive must have name with _test.go
+	Files must have name with _test.go
 	The test function must to start with Test
 	The test function get a only arg (test *testing.T)
 
@@ -40,3 +40,17 @@ func TestHello(t *testing.T) {
 
 // while var to use ":="
 // while const to use "="
+
+/*
+	Write a test
+	To compile without errors
+	Runs test and should be to fail
+	Verify error message
+	Write the minimum code for the test to pass
+	Refactor
+*/
+
+/*
+	Functions names and Private functions are lowercase
+	Public functions are upcase
+*/
